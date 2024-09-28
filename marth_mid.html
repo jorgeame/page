@@ -10,12 +10,10 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-		 height: 100vh; /* Full viewport height */
-		 background-image: url('MIDTOWN.jpg'); /* Add your image URL here */
-     background-repeat: no-repeat; /* Prevent the image from repeating */
-            background-position: center; /* Center the image */
-            background-size: contain; /* Ensure the entire image is visible */
-      
+        height: 100vh; /* Full viewport height */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-position: center; /* Center the image */
+        background-size: contain; /* Ensure the entire image is visible */
         color: #333;
     }
     header {
@@ -39,7 +37,6 @@
     }
     .countdown {
         font-size: 34px;
-    
         color: #48C128; /* Countdown text color */
     }
     @media (max-width: 600px) {
@@ -47,25 +44,14 @@
             padding: 10px;
         }
     }
-	
-	
-</style>
-
+    </style>
 </head>
 <body>
 
-
 <main>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+    <br><br><br><br><br><br>
     <div class="countdown" id="countdown">05:00</div>
 </main>
-
-
 
 <script>
     let timeLeft = 300; // 5 minutes in seconds
@@ -86,6 +72,21 @@
     }
 
     setInterval(updateCountdown, 1000);
+
+    // Lista de imágenes aleatorias
+    const images = [
+        'Midtown730.jpeg',   // Cambia las rutas de las imágenes aquí
+        'Midtown253.jpeg'
+    ];
+
+    // Función para mostrar una imagen aleatoria
+    function showRandomImage() {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        document.body.style.backgroundImage = `url(${images[randomIndex]})`;
+    }
+
+    // Ejecuta la función cuando la página se carga
+    window.onload = showRandomImage;
 </script>
 
 </body>
