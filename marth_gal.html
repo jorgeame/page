@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple mobile-friendly webpage with a countdown timer">
+    <title>Your Page Title</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh; /* Full viewport height */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-position: center; /* Center the image */
+        background-size: contain; /* Ensure the entire image is visible */
+        color: #333;
+    }
+    header {
+        background: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+    }
+    main {
+        padding: 20px;
+        text-align: center;
+    }
+    footer {
+        text-align: center;
+        padding: 10px;
+        background: #007bff;
+        color: #fff;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    .countdown {
+        font-size: 34px;
+        color: #48C128; /* Countdown text color */
+    }
+    @media (max-width: 600px) {
+        body {
+            padding: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+<main>
+    <br><br><br><br><br><br>
+    <div class="countdown" id="countdown">05:00</div>
+</main>
+
+<script>
+    let timeLeft = 300; // 5 minutes in seconds
+    const countdownElement = document.getElementById('countdown');
+
+    function updateCountdown() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+
+        countdownElement.textContent = 
+            `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+        if (timeLeft > 0) {
+            timeLeft--;
+        } else {
+            timeLeft = 300; // Reset to 5 minutes
+        }
+    }
+
+    setInterval(updateCountdown, 1000);
+
+    // Lista de imágenes aleatorias
+    const images = [
+        'Galerias253.jpeg',   // Cambia las rutas de las imágenes aquí
+        'Galerias306.jpeg',
+		'Galerias730.jpeg',
+		'Galerias819.jpeg'
+    ];
+
+    // Función para mostrar una imagen aleatoria
+    function showRandomImage() {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        document.body.style.backgroundImage = `url(${images[randomIndex]})`;
+    }
+
+    // Ejecuta la función cuando la página se carga
+    window.onload = showRandomImage;
+</script>
+
+</body>
+</html>
