@@ -8,18 +8,16 @@
         body {
             margin: 0;
             height: 100vh;
+            overflow-y: auto; /* Habilitar scroll vertical */
             display: flex;
             justify-content: center;
-            align-items: center;
-            overflow: auto; /* Permite el scroll */
+            align-items: flex-start; /* Alinear la imagen al inicio */
             background-color: #f4f4f9;
             font-family: Arial, sans-serif;
         }
         img {
-            width: auto;
-            height: auto;
-            max-width: none;
-            max-height: none;
+            width: 100%; /* Ocupa el ancho completo de la pantalla */
+            height: auto; /* Ajusta la altura automáticamente */
         }
     </style>
 </head>
